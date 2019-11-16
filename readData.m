@@ -1,4 +1,4 @@
-function [connectivity coord] = readData(filename)
+function [connectivity coord] = readData(filename,nen)
 %==========================================================================
 % Data input phase. Read information from data file
 %==========================================================================
@@ -20,7 +20,7 @@ nOfElements = fscanf(fileID, '%d', 1);
 % Read element information
 %--------------------------------------------------------------------------
 % Table of connectivities 
-connectivity = fscanf(fileID, '\n%d %d %d %d %d %d', [6,nOfElements]);
+connectivity = fscanf(fileID, '\n%d %d %d %d %d %d %d %d %d', [nen,nOfElements]);
 connectivity = connectivity';
 
 %--------------------------------------------------------------------------
